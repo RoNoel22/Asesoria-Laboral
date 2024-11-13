@@ -3,14 +3,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
-
-
-.portada{
-    background-image: url(/img/BAGRO.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;   }
-
     
  .boton {
     background-color: rgb(0, 0, 0);
@@ -20,7 +12,7 @@ body {
  }
 
  nav{
-   background-color: #1d6b9c;
+   background-color: black;
  }
 
 .button_header{
@@ -29,18 +21,35 @@ body {
    border-color:rgb(112, 140, 173);
 }
 
+.button_header:hover{
+   background-color: #1d6b9c;
+   text-shadow: none;
+   text-decoration:solid;
+}
+
 .img-cardd{
    height: 50%;
+   max-height: 50%;
 
+}
+
+
+.text-with-shadow{
+   text-shadow: 2px 2px 2px black;
 }
 
 .body_card{
-   overflow:scroll;
+   overflow:none;
 }
 
-.h5{
+h5{
    color:rgb(73, 135, 206);
    text-shadow: white;
+}
+
+h2{
+   color:rgb(73, 135, 206);
+   font-size: 40px;
 }
 
 .margin-left-card{
@@ -50,21 +59,76 @@ body {
 .feature-animation{
    /*visibility: hidden;*/
    opacity: 0;
-   animation: appearing 100ms linear forwards;
+   animation: appearing 1s linear forwards;
    animation-timeline: view();
-   animation-range: entry 10% cover 20%;
+   animation-range: entry 10% cover 40%;
+   animation-direction: normal;
+   background-color: white
 }
 
 @keyframes appearing{
    0%{
       opacity: 0;
-      transform:translateX(100px);
+      transform:translateX(200px);
       box-shadow: 0;
+      scale:.2
    }
 
    100%{
       opacity: 1;
       box-shadow: 1;
       transform: translateX(0);
+      scale: 1 ;
    }
 }
+
+.portada {
+   position: relative;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 90vh;
+   overflow: hidden;
+}
+
+.portada::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg");
+   background-size: cover;
+   background-position: center;
+   opacity: 1;
+   animation: image-fade 15s ease-in-out infinite;
+ }
+
+ .contenido-header{
+   z-index: 1;
+   position: relative;
+ }
+ 
+ @keyframes image-fade {
+   0% {
+     opacity: 1;
+     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg");
+   }
+   25% {
+     opacity: 0.8;
+     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg");
+   }
+   50% {
+     opacity: 1;
+     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-entrevista.jpg");
+   }
+   75% {
+     opacity: 0.8;
+     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-entrevista.jpg");
+   }
+   100% {
+     opacity: 1;
+     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg  ");
+   }
+ }
