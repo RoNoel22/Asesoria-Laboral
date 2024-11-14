@@ -13,6 +13,10 @@ body {
 
  nav{
    background-color: black;
+   position: sticky !important;
+   top:0;
+   left: 0;
+   z-index: 2;
  }
 
 .button_header{
@@ -98,7 +102,7 @@ h2{
    left: 0;
    width: 100%;
    height: 100%;
-   background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg");
+   background-image: url("/Asesoria-Laboral/img/portada-cv.jpg");
    background-size: cover;
    background-position: center;
    opacity: 1;
@@ -113,22 +117,22 @@ h2{
  @keyframes image-fade {
    0% {
      opacity: 1;
-     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg");
+     background-image: url("/Asesoria-Laboral/img/portada-cv.jpg");
    }
    25% {
-     opacity: 0.8;
-     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg");
+     /*opacity: 0.8;*/
+     background-image: url("/Asesoria-Laboral/img/portada-cv.jpg");
    }
    50% {
      opacity: 1;
-     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-entrevista.jpg");
+     background-image: url("/Asesoria-Laboral/img/portada-entrevista.jpg");
    }
    75% {
-     opacity: 0.8;
-     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-entrevista.jpg");
+     /*opacity: 0.8;*/  
+     background-image: url("/Asesoria-Laboral/img/portada-entrevista.jpg");
    }
    100% {
      opacity: 1;
-     background-image: url("/startbootstrap-modern-business-gh-pages/startbootstrap-modern-business-gh-pages/img/portada-cv.jpg  ");
+     background-image: url("/Asesoria-Laboral/img/portada-cv.jpg");
    }
  }
