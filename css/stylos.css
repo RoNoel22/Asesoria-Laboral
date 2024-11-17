@@ -37,9 +37,12 @@ body {
 
 }
 
+.main-title{
+   color: rgb(26, 19, 19);
+}
 
 .text-with-shadow{
-   text-shadow: 2px 2px 2px black;
+   text-shadow: 1px 1px 1px #1d6b9c;
 }
 
 .body_card{
@@ -106,11 +109,11 @@ h2{
    left: 0;
    width: 100%;
    height: 100%;
-   background-image: url("../img/portada-cv.jpg");
    background-size: cover;
    background-position: center;
    opacity: 1;
-   animation: image-fade 13s ease-in-out infinite;
+   background-image: url("../img/portada-personalizado.jpg");
+   animation: image-fade 10s linear infinite;
  }
 
  .contenido-header{
@@ -119,37 +122,41 @@ h2{
  }
  
  @keyframes image-fade {
-   0% {
-     opacity: 1;
-     background-image: url("../img/portada-cv.jpg");
+   0%,25%,50% {
+     background-image: url("../img/portada-efectivo.jpg");
    }
-   25% {
-     /*opacity: 0.8;*/
-     background-image: url("../img/portada-cv.jpg");
+   70%,95% {
+     background-image: url("../img/portada-personalizado.jpg");
    }
-   50% {
-     opacity: 1;
-     background-image: url("../img/portada-entrevista.jpg");
-   }
-   75% {
-     /*opacity: 0.8;*/  
-     background-image: url("../img/portada-entrevista.jpg");
-   }
-   100% {
-     opacity: 1;
-     background-image: url("../img/portada-cv.jpg");
+   100%{
+      background-image: url("../img/portada-efectivo.jpg");
    }
  }
 
  .word {
    font-weight: bolder;
+   width: 10px;
+   height: auto;
+   color: rgb(26, 19, 19);
    font-family: monospace;                
    font-size: 40px;
    overflow: hidden;
    white-space: nowrap;
    line-height: 1;
-   animation: typing 5s steps(8, end) 0s infinite,
-              fadeOut 0s ease 5s infinite;
+   animation: typing 10s steps(8, end) 0s infinite,
+              fadeOut 0s ease 5s infinite, changeWord 5s ease-in-out 0s infinite;
+ }
+
+ .word::before{
+   content: "";
+   font-size: 40px;
+   font-weight: bolder;
+   font-family: monospace;                
+   font-size: 40px;
+   width: 10px;
+   height: auto;
+   display: block;
+   animation: changeWord 10s steps(2) 0s infinite;
  }
 
  .word::after {
@@ -161,20 +168,30 @@ h2{
    height: 3px;
    bottom: 0;
    left: 0;
-   background-color: white ;
-   animation: blink_border 1s infinite step-end, translate-x 5s steps(8, end)  infinite; 
+   animation: blink_border 1s infinite step-end, translate-x 10s steps(8, end)  infinite; 
 }
  
  @keyframes typing {
    0%{ 
       width: 0; 
    }
-   40%  { 
+   15%  { 
       width: 8ch; 
    }
-   100% {
+   50% {
       width: 8ch;
    }
+   51%{
+      animation-timing-function: steps(13);
+      width: 0ch;
+   }
+   71%{
+      width: 13ch;
+   }
+   100%{
+      width: 13ch;
+   }
+
  }
  
  @keyframes fadeOut {
@@ -187,20 +204,51 @@ h2{
  }
 
  @keyframes blink_border {
+   0%{
+      background-color: rgb(26, 19, 19);
+      text-shadow: 1px 1px 1px rgb(26, 19, 19);   
+   }
    50%{
       background-color: transparent;
    }
+ }
+
+ @keyframes changeWord{
+   0%{
+      content: "Efectiva";
+   }
+   50%{
+      content:"Efectiva";
+      }
+   52%{
+
+      content:"Personalizada"
+   }
+   100%{
+      content: "Personalizada";
+   }
+
  }
 
  @keyframes translate-x {
    0%{ 
       transform: translateX(0ch); 
    }
-   40%  { 
+   15%  { 
       transform: translateX(7ch); 
    }
-   100% {
+   50% {
       transform: translateX(7ch); 
+   }
+   51%{
+      animation-timing-function: steps(12);
+      transform: translateX(0ch);
+   }
+   70%{
+      transform: translateX(12ch);
+   }
+   100%{
+      transform: translateX(12ch);
    }
 
  }
